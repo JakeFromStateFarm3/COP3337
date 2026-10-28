@@ -11,4 +11,6 @@ public:
     Deck(int seed);
     void shuffle();
     Card dealCard();
+    bool moreCards() const;
 };
+#endif

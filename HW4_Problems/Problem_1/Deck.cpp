@@ -23,3 +23,11 @@ Card Deck::dealCard() {
     current_card += 1;
     return deck[current_card - 1];
 }
+bool Deck::moreCards() const{
+    if (current_card > 51){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
