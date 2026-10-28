@@ -26,12 +26,16 @@ private:
         }
         return false;
     }
-    bool checkAttendance(){
-        return ((!isAbsent(attendance)) && (!isLate(attendance)))
-    }
-
 public:
     Attendance(std::string inputRecord){
         attendance = inputRecord;
     }
+    bool checkAttendance(){
+        return ((!isAbsent()) && (!isLate()));
+    }
 };
+
+int main() {
+    Attendance student1("ALPPLLP");
+    std::cout << student1.checkAttendance() << std::endl;
+}
