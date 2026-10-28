@@ -16,3 +16,8 @@ bool Hand::isFullHand() const{
         return false;
     }
 }
+void Hand::print() {
+    for(int i = 0; i < 5; i++){
+        std::cout << hand[i].toString();
+    } 
+}

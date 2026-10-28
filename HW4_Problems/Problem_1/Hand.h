@@ -8,5 +8,6 @@ private:
 public:
     void takeCards(Deck& deck_obj);
     bool isFullHand() const;
+    void print();
 };
 #endif
