@@ -38,6 +38,14 @@ bool Vector::full() const {
     return size == capacity;
 }
 
+int Vector::at(int index) const {
+    if (index < 0 || index >= size) {
+        std::cout << "at: out of boundaries\n";
+        return -9999999;
+    }
+    return data[index];
+}
+
 int Vector::getSize() const{
     return size;
 }
@@ -67,5 +75,25 @@ void Vector::push_front(int val) {
         data[i] = data[i - 1];
     }
     data[0] = val;
+    size++;
+}
+
+void Vector::insert(int pos, int val){
+    if (size == capacity){
+        capacity *= 2;
+        int* newData = new int[capacity];
+        for(int i = 0; i < size; i++) {
+            newData[i] = data[i];
+        }
+        delete[] data;
+        data = newData;
+    }
+    if (pos < 0){
+        pos = size + (pos + 1);
+    }
+    for (int i = size; i > pos; i-- ){
+        data[i] = data[i - 1];
+    }
+    data[pos] = val;
     size++;
 }

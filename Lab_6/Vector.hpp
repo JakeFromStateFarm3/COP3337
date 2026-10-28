@@ -10,10 +10,12 @@ public:
     void print() const;
 
     bool full() const;
+    int at(int index) const;
     int getSize() const;
     int getCapacity() const;
     void clear();
     void push_front(int val);
+    void insert(int pos, int val);
 
 private:
     int* data; // Array of integers
