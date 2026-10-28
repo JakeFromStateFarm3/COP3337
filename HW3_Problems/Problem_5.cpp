@@ -12,4 +12,17 @@ public:
         symbol = stockSymbol;
         name = stockName;
     }
+
+    std::string getSym() const {
+        return symbol;
+    }
+    std::string getName() const {
+        return name;
+    }
+    double getClosePrice() const {
+        return previousClosingPrice;
+    }
+    double getCurrentPrice() const {
+        return currentPrice;
+    }
 };
