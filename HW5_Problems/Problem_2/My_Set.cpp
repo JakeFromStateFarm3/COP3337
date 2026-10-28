@@ -58,10 +58,10 @@ void My_Set::printSet(){
         }
     }
     if (set[range]){
-        std::cout << "True";
+        std::cout << "True" << std::endl;
     }
     else{
-        std::cout << "{---}";
+        std::cout << "{---}" << std::endl;
     }
 }
 
