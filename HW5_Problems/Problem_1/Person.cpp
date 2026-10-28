@@ -25,6 +25,7 @@ Person::Person(const Person& other){
 
 Person::~Person(){
     delete[] name;
+    name = nullptr; //some weird bug was being thrown when executing so I researched how to fix it and apparently this does it which is why this is here.
 }
 
 void Person::display(){
