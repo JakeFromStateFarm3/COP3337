@@ -22,3 +22,17 @@ Person::Person(const Person& other){
     this -> name = nullptr;
     }
 }
+
+Person::~Person(){
+    delete[] name;
+}
+
+void Person::display(){
+    std::cout << "Age: " << this->age << std::endl;
+    if (this->name != nullptr) {
+        std::cout << "Name: " << this->name << std::endl;
+    }
+    else{
+        std::cout << "Name: [No Name Provided]" << std::endl;
+    }    
+}

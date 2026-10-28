@@ -10,4 +10,6 @@ private:
 public:
     Person(const char* name, int age);
     Person(const Person& other);
+    ~Person();
+    void display();
 };
