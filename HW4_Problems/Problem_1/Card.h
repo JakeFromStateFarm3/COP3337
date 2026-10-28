@@ -13,5 +13,7 @@ private:
 public:
     int getFace() const;
     int getSuit() const;
+    std::string toString() const;
     Card(int face_num, int suit_num);
 }
+#endif

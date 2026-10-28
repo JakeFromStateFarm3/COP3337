@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include "Card.h"
 
 std::vector<std::string> Card faceNames { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
 std::vector<std::string> Card suitNames {"♥", "♦", "♣", "♠"};
@@ -25,4 +25,7 @@ Card::Card(int face_num, int suit_num) {
     else{
         suit = 0;
     }
+}
+Card::toString() const{
+    return faceNames[face] + suitNames[suit];
 }
