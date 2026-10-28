@@ -36,6 +36,17 @@ bool Vector::full() const {
     return size == capacity;
 }
 
-int Vector::getSize(){
+int Vector::getSize() const{
     return size;
+}
+
+int Vector::getCapacity() const{
+    return capacity;
+}
+
+void Vector::clear() {
+    delete[] data;
+    size = 0;
+    capacity = 10;
+    data = new int[capacity];
 }

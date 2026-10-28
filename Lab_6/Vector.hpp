@@ -10,7 +10,9 @@ public:
     void print() const;
 
     bool full() const;
-    int getSize();
+    int getSize() const;
+    int getCapacity() const;
+    void clear();
 
 private:
     int* data; // Array of integers
