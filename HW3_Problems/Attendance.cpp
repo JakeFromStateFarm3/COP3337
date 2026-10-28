@@ -6,7 +6,7 @@ class Attendance {
 private:
     std::string attendance;
     
-    bool isAbsent(std::string attendance){
+    bool isAbsent(){
         int x = 0;
         for (int i = 0; i < attendance.length(); i++){
             if (attendance[i] == 'A'){
@@ -18,15 +18,20 @@ private:
         }
         return false;
     }
-    bool isLate(std::string attendance){
+    bool isLate(){
         for (int i = 2; i < attendance.length(); i++){
-            if (attendance[i] == 'L' and attendance[i - 1] == 'L' and attendance[i - 2] == 'L'){
+            if (attendance[i] == 'L' && attendance[i - 1] == 'L' && attendance[i - 2] == 'L'){
                 return true;
             }
         }
         return false;
     }
-    bool checkAttendance(std::string attendance){
+    bool checkAttendance(){
         return ((!isAbsent(attendance)) && (!isLate(attendance)))
+    }
+
+public:
+    Attendance(std::string inputRecord){
+        attendance = inputRecord;
     }
 };
