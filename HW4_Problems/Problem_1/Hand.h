@@ -9,5 +9,8 @@ public:
     void takeCards(Deck& deck_obj);
     bool isFullHand() const;
     void print();
+    bool pair() const;
+    bool twoPair() const;
+    bool threeOfAKind() const;
 };
 #endif

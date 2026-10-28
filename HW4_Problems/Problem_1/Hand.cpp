@@ -19,5 +19,45 @@ bool Hand::isFullHand() const{
 void Hand::print() {
     for(int i = 0; i < 5; i++){
         std::cout << hand[i].toString();
-    } 
+    }
+}
+bool Hand::pair() const{
+    int counts[13] = {0};
+    for(int i = 0; i < 5; i++){
+        counts[hand[i].getFace()]++;
+    }
+    for(int i = 0; i < 13; i++){
+        if (counts[i] == 2){
+            return true;
+        }
+    }
+    return false;
+}
+bool Hand::twoPair() const{
+    int counts[13] = {0};
+    int count = 0;
+    for(int i = 0; i < 5; i++){
+        counts[hand[i].getFace()]++;
+    }
+    for(int i = 0; i < 13; i++){
+        if (counts[i] == 2){
+            count++;
+            if (count == 2){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+bool Hand::threeOfAKind() const{
+    int counts[13] = {0};
+    for(int i = 0; i < 5; i++){
+        counts[hand[i].getFace()]++;
+    }
+    for(int i = 0; i < 13; i++){
+        if (counts[i] == 3){
+            return true;
+        }
+    }
+    return false;
 }
