@@ -28,5 +28,39 @@ void My_Set::insertElement(int k){
     }
     else{
         std::cout << "Warning: Number " << k << " is out of the set range [0, " << range << "]." << std::endl;
+        size++;
+    }
+}
+
+void My_Set::deleteElement(int k){
+    if (!(k < 0 || k <= range)){
+        set[k] = false;
+    }
+    else{
+        std::cout << "Warning: Number " << k << " is out of the set range [0, " << range << "]." << std::endl;
+        size--;
+    }
+}
+
+void My_Set::printSet(){
+    if (set[0]){
+        std::cout << "True, ";
+    }
+    else{
+        std::cout << "--, ";
+    }
+    for (int i = 0; i < range; i++){
+        if (set[i]) {
+            std::cout << "True, ";
+        }
+        else{
+            std::cout << "--, ";
+        }
+    }
+    if (set[range]){
+        std::cout << "True";
+    }
+    else{
+        std::cout << "--";
     }
 }
