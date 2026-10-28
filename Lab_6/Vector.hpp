@@ -13,6 +13,7 @@ public:
     int getSize() const;
     int getCapacity() const;
     void clear();
+    void push_front(int val);
 
 private:
     int* data; // Array of integers

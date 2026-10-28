@@ -16,11 +16,13 @@ void Vector::print() const {
 
 void Vector::push_back(int val) {
     if (full()) {
-        // Double the capacity
-        // Allocate a new array with doubled capacity
-        // Copy the elements from old array into a new one
-        // Deallocate old array
-        // Set the data equal to the new array
+        capacity *= 2;
+        int* newData = new int[capacity];
+        for(int i = 0; i < size; i++) {
+            newData[i] = data[i];
+        }
+        delete[] data;
+        data = newData;
     }
     data[size] = val;
     size++;
@@ -49,4 +51,21 @@ void Vector::clear() {
     size = 0;
     capacity = 10;
     data = new int[capacity];
+}
+
+void Vector::push_front(int val) {
+    if (size == capacity){
+        capacity *= 2;
+        int* newData = new int[capacity];
+        for(int i = 0; i < size; i++) {
+            newData[i] = data[i];
+        }
+        delete[] data;
+        data = newData;
+    }
+    for (int i = size; i > 0; i-- ){
+        data[i] = data[i - 1];
+    }
+    data[0] = val;
+    size++;
 }
