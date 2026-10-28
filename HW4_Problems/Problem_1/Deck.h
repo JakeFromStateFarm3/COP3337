@@ -9,4 +9,5 @@ private:
     int shuffle_seed;
 public:
     Deck(int seed);
+    void shuffle();
 };
