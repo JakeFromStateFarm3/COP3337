@@ -10,4 +10,5 @@ private:
 public:
     Deck(int seed);
     void shuffle();
+    Card dealCard();
 };
