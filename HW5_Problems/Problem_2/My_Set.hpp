@@ -10,4 +10,6 @@ private:
 public:
     My_Set(unsigned max);
     My_Set(const My_Set& other);
+    ~My_Set();
+    void insertElement(int k);
 };

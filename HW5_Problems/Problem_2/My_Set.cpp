@@ -17,3 +17,16 @@ My_Set::My_Set(const My_Set& other){
         set[i] = other.set[i];
     }
 }
+
+My_Set::~My_Set(){
+    delete[] set;
+}
+
+void My_Set::insertElement(int k){
+    if (!(k < 0 || k <= range)){
+        set[k] = true;
+    }
+    else{
+        std::cout << "Warning: Number " << k << " is out of the set range [0, " << range << "]." << std::endl;
+    }
+}
