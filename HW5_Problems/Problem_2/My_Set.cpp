@@ -23,7 +23,7 @@ My_Set::~My_Set(){
 }
 
 void My_Set::insertElement(int k){
-    if (!(k < 0 || k <= range)){
+    if (!(k < 0 || k > range)){
         set[k] = true;
     }
     else{
@@ -33,7 +33,7 @@ void My_Set::insertElement(int k){
 }
 
 void My_Set::deleteElement(int k){
-    if (!(k < 0 || k <= range)){
+    if (!(k < 0 || k > range)){
         set[k] = false;
     }
     else{
@@ -47,20 +47,32 @@ void My_Set::printSet(){
         std::cout << "True, ";
     }
     else{
-        std::cout << "--, ";
+        std::cout << "{---}, ";
     }
-    for (int i = 0; i < range; i++){
+    for (int i = 1; i < range; i++){
         if (set[i]) {
             std::cout << "True, ";
         }
         else{
-            std::cout << "--, ";
+            std::cout << "{---}, ";
         }
     }
     if (set[range]){
         std::cout << "True";
     }
     else{
-        std::cout << "--";
+        std::cout << "{---}";
     }
+}
+
+bool My_Set::isEqualTo(const My_Set& other) const{
+    if ((range != other.range) || (size != other.size)){
+        return false;
+    }
+    for (int i = 0; i <= range; i++){
+        if (set[i] != other.set[i]){
+            return false;
+        }
+    }
+    return true;
 }

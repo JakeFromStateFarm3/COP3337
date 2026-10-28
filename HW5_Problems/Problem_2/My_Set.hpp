@@ -14,4 +14,5 @@ public:
     void insertElement(int k);
     void deleteElement(int k);
     void printSet();
+    bool isEqualTo(const My_Set& other) const;
 };
