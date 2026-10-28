@@ -8,7 +8,7 @@ private:
     double previousClosingPrice;
     double currentPrice;
 public:
-    stock(std::string stockSymbol, std::string stockName){
+    stock(std::string stockSymbol, std::string stockName) {
         symbol = stockSymbol;
         name = stockName;
     }
@@ -16,13 +16,24 @@ public:
     std::string getSym() const {
         return symbol;
     }
+
     std::string getName() const {
         return name;
     }
+
     double getClosePrice() const {
         return previousClosingPrice;
     }
+
     double getCurrentPrice() const {
         return currentPrice;
+    }
+
+    void setClosePrice(double pastPrice) {
+        previousClosingPrice = pastPrice;
+    }
+
+    void setCurrentPrice(double price) {
+        currentPrice = price;
     }
 };
