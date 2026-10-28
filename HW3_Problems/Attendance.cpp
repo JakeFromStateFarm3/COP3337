@@ -26,4 +26,7 @@ private:
         }
         return false;
     }
+    bool checkAttendance(std::string attendance){
+        return ((!isAbsent(attendance)) && (!isLate(attendance)))
+    }
 };
