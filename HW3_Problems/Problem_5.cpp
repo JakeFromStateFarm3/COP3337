@@ -8,7 +8,7 @@ private:
     double previousClosingPrice;
     double currentPrice;
 public:
-    stock(std::string stockSymbol, std::string stockName) {
+    Stock(std::string stockSymbol, std::string stockName) {
         symbol = stockSymbol;
         name = stockName;
     }
@@ -36,6 +36,11 @@ public:
     void setCurrentPrice(double price) {
         currentPrice = price;
     }
+
+    double getChangePercent(){
+        return ((currentPrice / previousClosingPrice) - 1) * 100;
+        
+    }
 };
 
 int main() {
@@ -44,4 +49,5 @@ int main() {
     stock1.setCurrentPrice(27.6);
     std::cout << "Previous Closing Price: " << stock1.getClosePrice() << std::endl;
     std::cout << "Current Price: " << stock1.getCurrentPrice() << std::endl;
+    std::cout << "Percentage Change: " << stock1.getChangePercent() << std::endl;
 }
