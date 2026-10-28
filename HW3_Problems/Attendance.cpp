@@ -18,4 +18,12 @@ private:
         }
         return false;
     }
+    bool isLate(std::string attendance){
+        for (int i = 2; i < attendance.length(); i++){
+            if (attendance[i] == 'L' and attendance[i - 1] == 'L' and attendance[i - 2] == 'L'){
+                return true;
+            }
+        }
+        return false;
+    }
 };
