@@ -18,6 +18,7 @@ void Deck::shuffle() {
         int random_val = dist(eng);
         std::swap(deck[i], deck[random_val]);
     }
+    current_card = 0;
 }
 Card Deck::dealCard() {
     current_card += 1;

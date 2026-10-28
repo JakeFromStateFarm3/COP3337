@@ -6,8 +6,8 @@
 
 class Card{
 private:
-    int face
-    int suit
+    int face;
+    int suit;
     static std::vector<std::string> faceNames;
     static std::vector<std::string> suitNames;
 public:
