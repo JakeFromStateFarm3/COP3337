@@ -39,9 +39,12 @@ bool Vector::full() const {
 }
 
 int Vector::at(int index) const {
-    if (index < 0 || index >= size) {
+    if (index < -size || index >= size) {
         std::cout << "at: out of boundaries\n";
         return -9999999;
+    }
+    if (index < 0){
+        index = size + index;
     }
     return data[index];
 }
