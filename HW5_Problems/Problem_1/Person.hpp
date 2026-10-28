@@ -9,4 +9,5 @@ private:
     char* name;
 public:
     Person(const char* name, int age);
+    Person(const Person& other);
 };
