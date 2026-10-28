@@ -18,7 +18,7 @@ bool Hand::isFullHand() const{
 }
 void Hand::print() {
     for(int i = 0; i < 5; i++){
-        std::cout << hand[i].toString();
+        std::cout << hand[i].toString() << std::endl;
     }
 }
 bool Hand::pair() const{
