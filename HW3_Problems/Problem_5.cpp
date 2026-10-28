@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-class stock {
+class Stock {
 private:
     std::string symbol;
     std::string name;
@@ -37,3 +37,11 @@ public:
         currentPrice = price;
     }
 };
+
+int main() {
+    Stock stock1("symbol1", "name1");
+    stock1.setClosePrice(27.5);
+    stock1.setCurrentPrice(27.6);
+    std::cout << "Previous Closing Price: " << stock1.getClosePrice() << std::endl;
+    std::cout << "Current Price: " << stock1.getCurrentPrice() << std::endl;
+}
