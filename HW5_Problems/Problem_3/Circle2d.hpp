@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 
 class Circle2d{
 public:
@@ -23,10 +24,19 @@ public:
         this->x = x;
         this->y = y;
         this->radius = radius;
+        numberOfCircles += 1;
     }
     Circle2d(const Circle2d& circle){
         this->x = circle.x;
         this->y = circle.y;
         this->radius = circle.radius;
-    }    
+        numberOfCircles += 1;
+    }
+    ~Circle2d(){
+        numberOfCircles--;
+    }
+    bool overlaps(const Circle2d& circle){
+        double distance = std::sqrt(std::pow(x - circle.x, 2) + std::pow(y - circle.y, 2));
+        return distance < (radius + circle.radius);
+    }
 };
